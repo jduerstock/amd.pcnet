@@ -1,0 +1,350 @@
+; NETAMD2.INF
+;
+; AMD Based Network Interface Cards.
+;
+; Copyright 2000, Microsoft Corporation
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %MSFT%
+LayoutFile  = layout.inf
+DriverVer=05/17/2000,4.9.0.0
+
+[Manufacturer]
+%AMD%    = AMD
+%Accton% = Accton
+%Allied% = Allied
+%HP%     = HP
+%IBM%    = IBM
+
+[ControlFlags]
+ExcludeFromSelect       = PCI\VEN_1022&DEV_2000, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_12201113, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_104C103C, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_1064103C, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_1065103C, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_106C103C, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_106E103C, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_24541259, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_27001259, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_27011259, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_20001014, \
+                          PCI\VEN_1022&DEV_2000&SUBSYS_10EA103C
+
+                          
+[AMD]
+%PCIGENERIC.DeviceDesc% = PCIpcnet.ndi, PCI\VEN_1022&DEV_2000                  ;AMD PCNET Family PCI Ethernet Adapter
+
+[Accton]
+%AcctonPCI.DeviceDesc% = PCIpcnet.ndi, PCI\VEN_1022&DEV_2000&SUBSYS_12201113  ;Accton EN1220 10/100 Ethernet Card
+
+[Allied]
+%AT2454.DeviceDesc%     = AT2454.ndi,   PCI\VEN_1022&DEV_2000&SUBSYS_24541259  ;Allied Telesyn AT-2450v4
+%AT2700.DeviceDesc%     = AT2700.ndi,   PCI\VEN_1022&DEV_2000&SUBSYS_27001259  ;Allied Telesyn AT-2700TX
+%AT2701.DeviceDesc%     = AT2701.ndi,   PCI\VEN_1022&DEV_2000&SUBSYS_27011259  ;Allied Telesyn AT-2700FX
+
+[HP]
+%HPTWEETY.DeviceDesc%  = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_104C103C  ;HP Ethernet with LAN remote power adapter
+%HPWOODY.DeviceDesc%   = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_1064103C  ;HP Ethernet with LAN remote power adapter
+%HPSQUEEZY.DeviceDesc% = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_1065103C  ;HP Ethernet with LAN remote power adapter 		
+%HPCASPER.DeviceDesc%  = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_106C103C  ;HP Ethernet with LAN remote power adapter
+%HPPONGO.DeviceDesc%   = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_106E103C  ;HP Ethernet with LAN remote power adapter 		
+%HPSATAN.DeviceDesc%   = HPPCI.ndi,    PCI\VEN_1022&DEV_2000&SUBSYS_10EA103C  ;HP Ethernet with LAN remote power adapter 		
+
+[IBM]
+%IBMFAULT.DeviceDesc%   = PCIpcnet.ndi, PCI\VEN_1022&DEV_2000&SUBSYS_20001014  ;IBM Netfinity Fault Tolerance pci adapter
+
+
+;-------------------------------------------------------------------------------
+; AMD PCNET Family Ethernet Adapter PCI
+; 
+[PCIpcnet.ndi]
+Characteristics = 0x84 ; NCF_PHYSICAL | NCF_HAS_UI
+BusType         = 5
+AddReg          = PCnet5.reg, AMDParams.reg, networkaddress.reg
+CopyFiles       = pcntn5m.CopyFiles
+
+[PCIpcnet.ndi.services]
+AddService      = PCnet, 2, PCnet5.Service, PCnet.AddEventLog
+
+;-------------------------------------------------------------------------------
+; Allied Telesyn AT-2450v4 PCI 10Mb Ethernet Adapter
+; 
+[AT2454.ndi]
+Characteristics = 0x84 ; NCF_PHYSICAL | NCF_HAS_UI
+BusType         = 5
+AddReg          = PCnet5.reg, AT2454Params.reg, networkaddress.reg
+CopyFiles       = pcntn5m.CopyFiles
+
+[AT2454.ndi.services]
+AddService      = PCnet, 2, PCnet5.Service, PCnet.AddEventLog
+
+;-------------------------------------------------------------------------------
+; Allied Telesyn AT-2450v4 PCI 10Mb Ethernet Adapter
+; 
+[AT2700.ndi]
+Characteristics = 0x84 ; NCF_PHYSICAL | NCF_HAS_UI
+BusType         = 5
+AddReg          = PCnet5.reg, AT2700Params.reg, networkaddress.reg
+CopyFiles       = pcntn5m.CopyFiles
+
+[AT2700.ndi.services]
+AddService      = PCnet, 2, PCnet5.Service, PCnet.AddEventLog
+
+;-------------------------------------------------------------------------------
+; Allied Telesyn AT-2450v4 PCI 10Mb Ethernet Adapter
+; 
+[AT2701.ndi]
+Characteristics = 0x84 ; NCF_PHYSICAL | NCF_HAS_UI
+BusType         = 5
+AddReg          = PCnet5.reg, AT2701Params.reg, networkaddress.reg
+CopyFiles       = pcntn5m.CopyFiles
+
+[AT2701.ndi.services]
+AddService      = PCnet, 2, PCnet5.Service, PCnet.AddEventLog
+
+;-------------------------------------------------------------------------------
+; HP PCnet-FAST Family Ethernet Adapter
+;
+[HPPCI.ndi]
+Characteristics = 0x84 ; NCF_PHYSICAL | NCF_HAS_UI
+BusType         = 5
+AddReg          = HPAMDParams.reg, PCNet5.reg, networkaddress.reg
+CopyFiles       = pcntn5m.CopyFiles
+
+[HPPCI.ndi.services]
+AddService      = PCnet, 2, PCnet5.Service, PCnet.AddEventLog
+
+;-------------------------------------------------------------------------------
+; networkaddress
+;
+[networkaddress.reg]
+HKR, NDI\params\networkaddress,     ParamDesc,            0, %networkaddress%
+HKR, NDI\params\networkaddress,     type,                 0, "edit"
+HKR, NDI\params\networkaddress,     LimitText,            0, "12"
+HKR, NDI\params\networkaddress,     UpperCase,            0, "1"
+HKR, NDI\params\networkaddress,     default,              0, " "
+HKR, NDI\params\networkaddress,     optional,             0, "1"
+
+;-------------------------------------------------------------------------------
+; AMD common params section
+;
+[AMDParams.reg]
+HKR, ,                              BUS_TO_SCAN,          0, "ALL"
+HKR, ,                              BUSTIMER,             0, "0"
+HKR, ,                              LED0,                 0, "10000"
+HKR, ,                              LED1,                 0, "10000"
+HKR, ,                              LED2,                 0, "10000"
+HKR, ,                              LED3,                 0, "10000"
+HKR, ,                              Priority8021p,        0, "0"
+HKR, ,                              TcpipOffload,         0, "0"
+
+HKR, Ndi\params\TP,                 ParamDesc,            0, %TP%
+HKR, Ndi\params\TP,                 default,     0x00000002, "1"
+HKR, Ndi\params\TP,                 type,                 0, "enum"
+HKR, Ndi\params\TP\enum,            "0",                  0, %OFF%
+HKR, Ndi\params\TP\enum,            "1",                  0, %(Default)ON%
+
+HKR, Ndi\params\FDUP,               ParamDesc,            0, %FDUP% 
+HKR, Ndi\params\FDUP,               default,     0x00000002, "0"
+HKR, Ndi\params\FDUP,               type,                 0, "enum"
+HKR, Ndi\params\FDUP\enum,          "0",                  0, %Default%
+HKR, Ndi\params\FDUP\enum,          "1",                  0, %OFF%
+HKR, Ndi\params\FDUP\enum,          "2",                  0, %AUIFD%
+HKR, Ndi\params\FDUP\enum,          "3",                  0, %UTPFD%
+
+HKR, Ndi\params\MPMODE,             ParamDesc,            0, %MPMODE%
+HKR, Ndi\params\MPMODE,             default,              0, "0"
+HKR, Ndi\params\MPMODE,             type,                 0, "enum"
+HKR, Ndi\params\MPMODE\enum,        "0",                  0, %Default(OFF)%
+HKR, Ndi\params\MPMODE\enum,        "1",                  0, %ON%
+
+HKR, Ndi\params\Priority8021p,             ParamDesc,   0, %Priority8021p%
+HKR, Ndi\params\Priority8021p,             default,     0, "0"
+HKR, Ndi\params\Priority8021p,             type,        0, "enum"
+HKR, Ndi\params\Priority8021p\enum,        "0",         0, %Default(OFF)%
+HKR, Ndi\params\Priority8021p\enum,        "1",         0, %ON%
+
+; Network Address
+HKR, Ndi\params\NetworkAddress,        ParamDesc,  0, %NetworkAddress%
+HKR, Ndi\params\NetworkAddress,        Default,    0, ""
+HKR, Ndi\params\NetworkAddress,        type,       0, "edit"
+HKR, NDI\params\NetworkAddress,        LimitText,  0, "12"
+HKR, NDI\params\NetworkAddress,        UpperCase,  0, "1"
+HKR, NDI\params\NetworkAddress,        optional,   0, "1"
+
+
+HKR, Ndi\params\TcpipOffload,             ParamDesc,   0, %TcpipOffload%
+HKR, Ndi\params\TcpipOffload,             default,     0, "0"
+HKR, Ndi\params\TcpipOffload,             type,        0, "enum"
+HKR, Ndi\params\TcpipOffload\enum,        "0",         0, %Default(OFF)%
+HKR, Ndi\params\TcpipOffload\enum,        "1",         0, %ON%
+
+HKR, Ndi\params\EXTPHY,             ParamDesc,            0, %EXTPHY%
+HKR, Ndi\params\EXTPHY,             default,              0, "0"
+HKR, Ndi\params\EXTPHY,             type,                 0, "enum"
+HKR, Ndi\params\EXTPHY\enum,        "0",                  0, %Auto%
+HKR, Ndi\params\EXTPHY\enum,        "1",                  0, %100HD%
+HKR, Ndi\params\EXTPHY\enum,        "2",                  0, %100FD%
+HKR, Ndi\params\EXTPHY\enum,        "3",                  0, %10HD%
+HKR, Ndi\params\EXTPHY\enum,        "4",                  0, %10FD%
+
+;-------------------------------------------------------------------------------
+; ATI common params section
+;
+[AT2454Params.reg]
+HKR, ,                              BUS_TO_SCAN,          0, "ALL"
+HKR, ,                              BUSTIMER,             0, "0"
+
+HKR, Ndi\params\MPMODE,             ParamDesc,            0, %MPMODE%
+HKR, Ndi\params\MPMODE,             default,              0, "0"
+HKR, Ndi\params\MPMODE,             type,                 0, "enum"
+HKR, Ndi\params\MPMODE\enum,        "0",                  0, %Default(OFF)%
+HKR, Ndi\params\MPMODE\enum,        "1",                  0, %ON%
+
+HKR, Ndi\params\EXTPHY,             ParamDesc,            0, %EXTPHY%
+HKR, Ndi\params\EXTPHY,             default,              0, "3"
+HKR, Ndi\params\EXTPHY,             type,                 0, "enum"
+HKR, Ndi\params\EXTPHY\enum,        "3",                  0, %10HD%
+HKR, Ndi\params\EXTPHY\enum,        "4",                  0, %10FD%
+
+[AT2700Params.reg]
+HKR, ,                              BUS_TO_SCAN,          0, "ALL"
+HKR, ,                              BUSTIMER,             0, "0"
+
+HKR, Ndi\params\MPMODE,             ParamDesc,            0, %MPMODE%
+HKR, Ndi\params\MPMODE,             default,              0, "0"
+HKR, Ndi\params\MPMODE,             type,                 0, "enum"
+HKR, Ndi\params\MPMODE\enum,        "0",                  0, %Default(OFF)%
+HKR, Ndi\params\MPMODE\enum,        "1",                  0, %ON%
+
+HKR, Ndi\params\EXTPHY,             ParamDesc,            0, %EXTPHY%
+HKR, Ndi\params\EXTPHY,             default,              0, "0"
+HKR, Ndi\params\EXTPHY,             type,                 0, "enum"
+HKR, Ndi\params\EXTPHY\enum,        "0",                  0, %Auto%
+HKR, Ndi\params\EXTPHY\enum,        "1",                  0, %100HD%
+HKR, Ndi\params\EXTPHY\enum,        "2",                  0, %100FD%
+HKR, Ndi\params\EXTPHY\enum,        "3",                  0, %10HD%
+HKR, Ndi\params\EXTPHY\enum,        "4",                  0, %10FD%
+
+[AT2701Params.reg]
+HKR, ,                              BUS_TO_SCAN,          0, "ALL"
+HKR, ,                              BUSTIMER,             0, "0"
+
+HKR, Ndi\params\MPMODE,             ParamDesc,            0, %MPMODE%
+HKR, Ndi\params\MPMODE,             default,              0, "0"
+HKR, Ndi\params\MPMODE,             type,                 0, "enum"
+HKR, Ndi\params\MPMODE\enum,        "0",                  0, %Default(OFF)%
+HKR, Ndi\params\MPMODE\enum,        "1",                  0, %ON%
+
+HKR, Ndi\params\EXTPHY,             ParamDesc,            0, %EXTPHY%
+HKR, Ndi\params\EXTPHY,             default,              0, "1"
+HKR, Ndi\params\EXTPHY,             type,                 0, "enum"
+HKR, Ndi\params\EXTPHY\enum,        "1",                  0, %100HD%
+HKR, Ndi\params\EXTPHY\enum,        "2",                  0, %100FD%
+
+;-------------------------------------------------------------------------------
+; HP only params section
+;
+[HPAMDParams.reg]
+HKR, ,                              BUS_TO_SCAN,          0, "ALL"
+HKR, ,                              BUSTIMER,             0, "0"
+HKR, ,                              LED0,                 0, "10000"
+HKR, ,                              LED1,                 0, "10000"
+HKR, ,                              LED2,                 0, "90"
+HKR, ,                              LED3,                 0, "10000"
+HKR, ,                              MPMODE,               0, "0"
+
+HKR, Ndi\params\EXTPHY,             ParamDesc,            0, %EXTPHY%
+HKR, Ndi\params\EXTPHY,             default,              0, "0"
+HKR, Ndi\params\EXTPHY,             type,                 0, "enum"
+HKR, Ndi\params\EXTPHY\enum,        "0",                  0, %Auto% 
+HKR, Ndi\params\EXTPHY\enum,        "1",                  0, %100HD%
+HKR, Ndi\params\EXTPHY\enum,        "2",                  0, %100FD%
+HKR, Ndi\params\EXTPHY\enum,        "3",                  0, %10HD% 
+HKR, Ndi\params\EXTPHY\enum,        "4",                  0, %10FD% 
+
+;------------------------------------------------------------------------------
+; AMD PCI Interfaces and Service
+;
+[PCnet5.reg]
+HKR, Ndi,            Service,    0, "PCNet5"
+HKR, Ndi\Interfaces, UpperRange, 0, "ndis5"
+HKR, Ndi\Interfaces, LowerRange, 0, "ethernet"
+
+[pcntn5m.CopyFiles]
+pcntpci5.sys,,,2
+
+[PCnet5.Service]
+DisplayName     = %PCnet.Service.DispName%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\pcntpci5.sys
+LoadOrderGroup  = NDIS
+
+[PCnet.AddEventLog]
+AddReg = PCnet.AddEventLog.reg
+
+[PCnet.AddEventLog.reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+;-------------------------------------------------------------------------------
+; DestinationDirs
+;
+[DestinationDirs]
+DefaultDestDir    = 12
+pcntn5m.CopyFiles = 12
+
+;-------------------------------------------------------------------------------
+; Localizable Strings
+;
+[Strings]
+MSFT                    = "Microsoft"
+
+AMD                     = "Advanced Micro Devices (AMD)"
+Accton                  = "Accton"
+Allied                  = "Allied Telesyn"
+HP                      = "Hewlett Packard"
+IBM                     = "IBM"
+
+TP                      = "TP Mode"
+Default                 = "Use adapter setting"
+OFF                     = "Off"
+(Default)ON             = "On (Default)"
+Default(OFF)            = "Off (Default)"
+ON                      = "On"
+MPMODE                  = "MP Mode"
+FDUP                    = "Full Duplex"
+EXTPHY                  = "External PHY"
+Auto                    = "Auto Detect"
+AUIFD                   = "AUI - Full Duplex"
+UTPFD                   = "UTP - Full Duplex"
+100HD                   = "100Mbps Half Duplex"
+100FD                   = "100Mbps Full Duplex"
+10HD                    = "10Mbps Half Duplex"
+10FD                    = "10Mbps Full Duplex"
+NetworkAddress          = "Network Address"
+Priority8021p            = "IEEE 802.1p Tagging"
+TcpipOffload             = "TCP/IP Offload"
+
+
+PCIGENERIC.DeviceDesc   = "AMD PCNET Family PCI Ethernet Adapter"
+AcctonPCI.DeviceDesc    = "Accton EN1220 10/100 Ethernet Card"
+AT2454.DeviceDesc       = "Allied Telesyn AT-2450v4 PCI 10Mb Ethernet Adapter"
+AT2700.DeviceDesc       = "Allied Telesyn AT-2700TX PCI 10/100 Ethernet Adapter"
+AT2701.DeviceDesc       = "Allied Telesyn AT-2700FX PCI 100Mb Ethernet Adapter"
+HPTWEETY.DeviceDesc     = "HP Ethernet with LAN remote power adapter"
+HPWOODY.DeviceDesc      = "HP Ethernet with LAN remote power adapter"
+HPSQUEEZY.DeviceDesc    = "HP Ethernet with LAN remote power adapter"
+HPCASPER.DeviceDesc     = "HP Ethernet with LAN remote power adapter"
+HPPONGO.DeviceDesc      = "HP Ethernet with LAN remote power adapter"
+HPSATAN.DeviceDesc      = "HP Ethernet with LAN remote power adapter"
+IBMFAULT.DeviceDesc     = "IBM Netfinity Fault Tolerance PCI Adapter"
+
+PCnet.Service.DispName  = "AMD PCNET Compatable Adapter Driver"
+
+

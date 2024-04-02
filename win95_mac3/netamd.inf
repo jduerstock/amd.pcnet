@@ -1,0 +1,662 @@
+; NETAMDUP.INF
+;
+; AMD Based Network Interface Cards.
+;
+; Copyright 1993-1995, Microsoft Corporation
+
+[version]
+LayoutFile=layout.inf
+signature="$Windows95$"
+Class=Net
+provider=%V_MS%
+
+[Manufacturer]
+%V_AMD%=AMD
+%V_BOCA%=BOCA
+%V_EXOS%=EXOS
+%V_NOVELL%=NOVELL
+%V_TULIP%=TULIP
+%V_MICRO%=MICRO
+%V_SVEC%=SVEC
+%V_MITRON%=MITRON
+%V_ALLIED%=ALLIED
+%V_SYS%=SYS
+%V_CPQ%=COMPAQ
+
+[SourceDisksNames]
+1 = %Disk1%,, 0000-0000
+
+[SourceDisksFiles]
+PCNTN3.VXD = 1,,pcntn3.vxd,12345
+PCNTND.DOS = 1,,pcntnd.dos,1234
+NETAMD.INF = 1,,netamd.inf,1234
+
+[AMD]
+%*pnp8231.DeviceDesc%=*pnp8231.ndi, *pnp8231    ;AMD AM2100/AM1500T
+%*ADV55AA.DeviceDesc%=*ADV55AA.ndi, *ADV55AA    ;AMD PCnet ISA/PNP
+%*pnp828c.DeviceDesc%=PCIpcnet.ndi, *pnp828c    ;AMD PCnet/PCI
+%*pnp828c.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000    ;AMD PCnet PCI
+%*pnp828d.DeviceDesc%=*pnp828d.ndi, *pnp828d    ;AMD PCnet VL
+
+[MICRO]
+%*MICRO.DeviceDesc%=  *MDY1900.ndi, *MDY1900  
+%*MICRO2.DeviceDesc%= *MDY1901.ndi, *MDY1901  
+%*MICROPCI.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000
+
+[SVEC]
+%*SVE0001.DeviceDesc%=*SVE0001.ndi, *SVE0001   
+%*SVEPCI.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000
+
+[MITRON]
+%*MITRON.DeviceDesc%= *ADV55AA.ndi, *ADV55AA   
+%*MITRONPCI.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000
+
+[ALLIED]
+%*ATK1500.DeviceDesc%=*ATK1500.ndi, *ATK1500   
+
+[SYS]
+%*SKD8000.DeviceDesc%=*SKD8000.ndi, *SKD8000   
+
+[BOCA]
+%*BRI1001.DeviceDesc%=*BRI1001.ndi, *BRI1001   
+
+[TULIP]
+%*TCI00D0.DeviceDesc%=*TCI00D0.ndi, *TCI00D0    ;Tulip NCC-16 ISA+
+
+[EXOS]
+%*pnp8277.DeviceDesc%=*pnp8277.ndi, *pnp8277	;Exos 105
+
+[NOVELL]
+%*pnp80d7.DeviceDesc%=*pnp80d7.ndi, *pnp80d7	;Novell/Anthem NE1500T
+%*pnp80d8.DeviceDesc%=*pnp80d8.ndi, *pnp80d8	;Novell/Anthem NE2100
+
+[COMPAQ]
+%*COMPAQPCI.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000
+%*COMPAQPC2.DeviceDesc%=PCIpcnet.ndi, PCI\VEN_1022&DEV_2000
+
+;****************************************************************************
+;*pnp8231       ;AMD AM2100/AM1500T
+;****************************************************************************
+
+[*pnp8231.ndi]
+AddReg=*pnp8231.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*pnp8231.LogConfig
+
+[*pnp8231.ndi.reg]
+HKR,Ndi,DeviceID,,"*PNP8231"
+HKR,Ndi,MatchAndMoveID,,"*pnp8231,PCI\VEN_1022&DEV_2000,PCI\VEN_1022&DEV_2000&REV_02"
+
+[*pnp8231.LogConfig]
+IOConfig=20@300-37F%FFE0(3FF::)
+IRQConfig=3,4,5,9,10,11,12,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+;****************************************************************************
+;*ATK1500   ;Allied Telesyn
+;****************************************************************************
+
+[*ATK1500.ndi]
+AddReg=*ATK1500.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*ATK1500.ndi.reg]
+HKR,Ndi,DeviceID,,"*ATK1500"
+
+[*ATK1500.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*SKD8000   ;SysKonnect Inc
+;****************************************************************************
+
+[*SKD8000.ndi]
+AddReg=*SKD8000.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*SKD8000.ndi.reg]
+HKR,Ndi,DeviceID,,"*SKD8000"
+
+[*SKD8000.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*SVE0001   ;SVEC
+;****************************************************************************
+
+[*SVE0001.ndi]
+AddReg=*SVE0001.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*SVE0001.ndi.reg]
+HKR,Ndi,DeviceID,,"*SVE0001"
+
+[*SVE0001.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*BRI1001       ;Boca pcNET isa/PNP
+;****************************************************************************
+
+[*BRI1001.ndi]
+AddReg=*BRI1001.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*BRI1001.ndi.reg]
+HKR,Ndi,DeviceID,,"*BRI1001"
+
+[*BRI1001.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*TCI00D0       ;Tulip NCC-16 ISA +
+;****************************************************************************
+
+[*TCI00D0.ndi]
+AddReg=*TCI00D0.ndi.reg,PCnet.ndi.reg,AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*TCI00D0.ndi.reg]
+HKR,Ndi,DeviceID,,"*TCI00D0"
+
+[*TCI00D0.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*MDY1901       Microdyne NE2500T
+;****************************************************************************
+[*MDY1901.ndi]
+AddReg=*MDY1901.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*MDY1901.ndi.reg]
+HKR,Ndi,DeviceID,,"*MDY1901"
+
+[*MDY1901.LogConfig]
+IOConfig=20@200-3FF%FFE0(3FF::)
+IRQConfig=3,4,5,9,10,11,12,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+[*MDY1901.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*MDY1900       Microdyne NE2500
+;****************************************************************************
+[*MDY1900.ndi]
+AddReg=*MDY1900.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*MDY1900.LogConfig
+
+[*MDY1900.ndi.reg]
+HKR,Ndi,DeviceID,,"*MDY1900"
+
+[*MDY1900.LogConfig]
+IOConfig=20@200-3FF%FFE0(3FF::)
+IRQConfig=3,4,5,9,10,11,12,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+[*MDY1900.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*ADV55AA       ;AMD pcNET isa/PNP
+;****************************************************************************
+[*ADV55AA.ndi]
+AddReg=*ADV55AA.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*ADV55AA.LogConfig
+
+[*ADV55AA.ndi.reg]
+HKR,Ndi,DeviceID,,"*ADV55AA"
+HKR,Ndi,MatchAndMoveID,,"*pnp828c,PCI\VEN_1022&DEV_2000"
+
+[*ADV55AA.LogConfig]
+IOConfig=20@200-3FF%FFE0(3FF::)
+IRQConfig=3,4,5,9,10,11,12,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+[*ADV55AA.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+; PCIpcnet       ;AMD pcNET PCI
+;****************************************************************************
+
+[PCIpcnet.ndi]
+AddReg=PCIpcnet.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=PCIpcnet.LogConfig
+
+[PCIpcnet.ndi.reg]
+HKR,Ndi,DeviceID,,"PCI\VEN_1022&DEV_2000"
+HKR,Ndi,MatchAndMoveID,,"*pnp828c,PCI\VEN_1022&DEV_2000,PCI\VEN_1022&DEV_2000&REV_02"
+HKR,NDI,CardType,,"PCI"
+
+[PCIpcnet.LogConfig]
+IOConfig=20@200-3FF%FFE0(3FF::)
+IRQConfig=3,4,5,9,10,11,12,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+[PCIpcnet.ndi.PosDup]
+*pnp828c
+
+;****************************************************************************
+;*pnp8277	;Exos 105
+;****************************************************************************
+
+[*pnp8277.ndi]
+AddReg=*pnp8277.ndi.reg,AM2100.ndi.reg,AMDOLD.ndi.reg
+LogConfig=*pnp8277.LogConfig
+
+[*PNP8277.ndi.reg]
+HKR,Ndi,DeviceID,,"*PNP8277"
+
+[*PNP8277.LogConfig]
+IOConfig=20@300-37F%FFF0(3FF::)
+IRQConfig=3,4,5,9,10,11,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+;****************************************************************************
+;*pnp80d7	;Novell/Anthem NE1500T
+;****************************************************************************
+
+[*pnp80d7.ndi]
+AddReg=*pnp80d7.ndi.reg,AM1500.ndi.reg,AMDOLD.ndi.reg
+LogConfig=*pnp80d7.LogConfig
+
+[*PNP80d7.ndi.reg]
+HKR,Ndi,DeviceID,,"*PNP80d7"
+
+[*PNP80d7.LogConfig]
+IOConfig=20@300-37F%FFF0(3FF::)
+IRQConfig=3,4,5,9,10,11,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+;****************************************************************************
+;*828d       ;AMD PCnet VL
+;****************************************************************************
+[*pnp828d.ndi]
+AddReg=*pnp828d.ndi.reg,PCnet.ndi.reg, AMD.ndi.reg, PCNET2.ndi.reg
+LogConfig=*pnp828d.LogConfig
+
+[*pnp828d.ndi.PosDup]
+*PNP8231
+
+[*pnp828d.ndi.reg]
+HKR,Ndi,DeviceID,,"*PNP828d"
+HKR,Ndi,MatchAndMoveID,,"*pnp8231,PCI\VEN_1022&DEV_2000"
+
+[*pnp828d.LogConfig]
+IOConfig=20@200-3FF%FFE0(3FF::)
+IRQConfig=0,3,4,5,9,10,11,12,15
+ConfigPriority=HARDRECONFIG
+
+;****************************************************************************
+;*pnp80d8	;Novell/Anthem NE2100
+;****************************************************************************
+
+[*pnp80d8.ndi]
+AddReg=*pnp80d8.ndi.reg,AM2100.ndi.reg,AMDOLD.ndi.reg
+LogConfig=*pnp80d8.LogConfig
+
+[*PNP80d8.ndi.reg]
+HKR,Ndi,DeviceID,,"*PNP80d8"
+
+[*PNP80d8.LogConfig]
+IOConfig=20@300-37F%FFF0(3FF::)
+IRQConfig=3,4,5,9,10,11,15
+DMAConfig=3,5,6,7
+ConfigPriority=HARDRECONFIG
+
+;****************************************************************************
+; AMD Drivers
+;****************************************************************************
+[PCNET2.ndi.reg]
+HKR,NDI\params\BUS_TO_SCAN,flag,1,30,00,00,00
+HKR,NDI\params\BUSTIMER,flag,1,30,00,00,00
+HKR,NDI\params\FDUP,flag,1,30,00,00,00
+HKR,NDI\params\LED0,flag,1,20,00,00,00
+HKR,NDI\params\LED1,flag,1,20,00,00,00
+HKR,NDI\params\LED2,flag,1,20,00,00,00
+HKR,NDI\params\LED3,flag,1,20,00,00,00
+HKR,NDI\params\TP,flag,1,20,00,00,00
+
+[AMDOLD.ndi.reg]
+
+HKR,,Interrupt,1,04,00,00,00
+HKR,,IOAddress,1,02,00,00,00
+HKR,,DMAChannel,1,03,00,00,00
+HKR,NDI\params\Interrupt,resc,1,04,00,00,00
+HKR,Ndi\params\interrupt,ParamDesc,,"Interrupt Level"
+HKR,NDI\params\Interrupt,flag,1,30,00,00,00
+HKR,Ndi\params\ioaddress,resc,1,02,00,00,00
+HKR,Ndi\params\ioaddress,ParamDesc,,"I/O Base Address"
+HKR,NDI\params\ioaddress,flag,1,30,00,00,00
+HKR,NDI\params\DMAChannel,resc,1,03,00,00,00
+HKR,NDI\params\DMAChannel,ParamDesc,,"DMA Channel"
+HKR,NDI\params\DMAChannel,flag,1,30,00,00,00
+
+[AMD.ndi.reg]
+; Resources
+HKR,,Interrupt,1,04,00,00,00
+HKR,,IOAddress,1,02,00,00,00
+HKR,,DMAChannel,1,03,00,00,00
+HKR,NDI\params\Interrupt,resc,1,04,00,00,00
+HKR,Ndi\params\interrupt,ParamDesc,,"Interrupt Level"
+HKR,NDI\params\interrupt,flag,1,30,00,00,00
+HKR,Ndi\params\ioaddress,resc,1,02,00,00,00
+HKR,Ndi\params\ioaddress,ParamDesc,,"I/O Base Address"
+HKR,NDI\params\ioaddress,flag,1,30,00,00,00
+HKR,NDI\params\DMAChannel,resc,1,03,00,00,00
+HKR,NDI\params\DMAChannel,ParamDesc,,"DMA Channel"
+HKR,NDI\params\DMAChannel,flag,1,30,00,00,00
+
+; BUS_TO_SCAN
+HKR,Ndi\params\BUS_TO_SCAN,ParamDesc,,"Bus Type"
+HKR,Ndi\params\BUS_TO_SCAN,default,,ALL
+HKR,Ndi\params\BUS_TO_SCAN,type,,enum
+HKR,Ndi\params\BUS_TO_SCAN\enum,ALL,,"ALL"
+HKR,Ndi\params\BUS_TO_SCAN\enum,PCI,,"PCI"
+HKR,Ndi\params\BUS_TO_SCAN\enum,PNP,,"PNP"
+HKR,Ndi\params\BUS_TO_SCAN\enum,ISA,,"ISA"
+HKR,Ndi\params\BUS_TO_SCAN\enum,VESA,,"VESA"
+
+;BUSTIMER
+HKR,Ndi\params\BUSTIMER,ParamDesc,,"Bus Timer(Micro Seconds)"
+HKR,Ndi\params\BUSTIMER,default,,0
+HKR,Ndi\params\BUSTIMER,type,,enum
+HKR,Ndi\params\BUSTIMER\enum,0,,Default
+HKR,Ndi\params\BUSTIMER\enum,5,,5
+HKR,Ndi\params\BUSTIMER\enum,6,,6
+HKR,Ndi\params\BUSTIMER\enum,7,,7
+HKR,Ndi\params\BUSTIMER\enum,8,,8
+HKR,Ndi\params\BUSTIMER\enum,9,,9
+HKR,Ndi\params\BUSTIMER\enum,10,,10
+HKR,Ndi\params\BUSTIMER\enum,11,,11
+HKR,Ndi\params\BUSTIMER\enum,12,,12
+HKR,Ndi\params\BUSTIMER\enum,13,,13
+
+;FULL_DUPLEX
+HKR,Ndi\params\FDUP,ParamDesc,,"Full Duplex"
+HKR,Ndi\params\FDUP,default,,0
+HKR,Ndi\params\FDUP,type,,enum
+HKR,Ndi\params\FDUP\enum,0,,Default
+HKR,Ndi\params\FDUP\enum,1,,OFF
+HKR,Ndi\params\FDUP\enum,2,,AUI
+HKR,Ndi\params\FDUP\enum,3,,UTP
+
+;LED0
+HKR,NDI\params\LED0,ParamDesc,,"LED0"
+HKR,NDI\params\LED0,default,,00c0
+HKR,NDI\params\LED0,type,,enum
+HKR,NDI\params\LED0\enum,00c0,,Default (c0)
+HKR,NDI\params\LED0\enum,0,,0
+HKR,NDI\params\LED0\enum,2,,2
+HKR,NDI\params\LED0\enum,4,,4
+HKR,NDI\params\LED0\enum,8,,8
+HKR,NDI\params\LED0\enum,10,,10
+HKR,NDI\params\LED0\enum,20,,20
+HKR,NDI\params\LED0\enum,30,,30
+HKR,NDI\params\LED0\enum,34,,34
+HKR,NDI\params\LED0\enum,40,,40
+HKR,NDI\params\LED0\enum,81,,81
+HKR,NDI\params\LED0\enum,00b0,,b0
+HKR,NDI\params\LED0\enum,4088,,4088
+
+;LED1
+HKR,NDI\params\LED1,ParamDesc,,"LED1"
+HKR,NDI\params\LED1,default,,00b0
+HKR,NDI\params\LED1,type,,enum
+HKR,NDI\params\LED1\enum,00b0,,Default (b0)
+HKR,NDI\params\LED1\enum,0,,0
+HKR,NDI\params\LED1\enum,2,,2
+HKR,NDI\params\LED1\enum,4,,4
+HKR,NDI\params\LED1\enum,8,,8
+HKR,NDI\params\LED1\enum,10,,10
+HKR,NDI\params\LED1\enum,20,,20
+HKR,NDI\params\LED1\enum,30,,30
+HKR,NDI\params\LED1\enum,34,,34
+HKR,NDI\params\LED1\enum,40,,40
+HKR,NDI\params\LED1\enum,81,,81
+HKR,NDI\params\LED1\enum,00c0,,c0
+HKR,NDI\params\LED1\enum,4088,,4088
+
+;LED2
+HKR,NDI\params\LED2,ParamDesc,,"LED2"
+HKR,NDI\params\LED2,default,,4088
+HKR,NDI\params\LED2,type,,enum
+HKR,NDI\params\LED2\enum,4088,,Default (4088)
+HKR,NDI\params\LED2\enum,0,,0
+HKR,NDI\params\LED2\enum,2,,2
+HKR,NDI\params\LED2\enum,4,,4
+HKR,NDI\params\LED2\enum,8,,8
+HKR,NDI\params\LED2\enum,10,,10
+HKR,NDI\params\LED2\enum,20,,20
+HKR,NDI\params\LED2\enum,30,,30
+HKR,NDI\params\LED2\enum,34,,34
+HKR,NDI\params\LED2\enum,40,,40
+HKR,NDI\params\LED2\enum,81,,81
+HKR,NDI\params\LED2\enum,00b0,,b0
+HKR,NDI\params\LED2\enum,00c0,,c0
+
+;LED3
+HKR,NDI\params\LED3,ParamDesc,,"LED3"
+HKR,NDI\params\LED3,default,,81
+HKR,NDI\params\LED3,type,,enum
+HKR,NDI\params\LED3\enum,81,,Default (81)
+HKR,NDI\params\LED3\enum,0,,0
+HKR,NDI\params\LED3\enum,2,,2
+HKR,NDI\params\LED3\enum,4,,4
+HKR,NDI\params\LED3\enum,8,,8
+HKR,NDI\params\LED3\enum,10,,10
+HKR,NDI\params\LED3\enum,20,,20
+HKR,NDI\params\LED3\enum,30,,30
+HKR,NDI\params\LED3\enum,34,,34
+HKR,NDI\params\LED3\enum,40,,40
+HKR,NDI\params\LED3\enum,b0,,b0
+HKR,NDI\params\LED3\enum,c0,,c0
+HKR,NDI\params\LED3\enum,4088,,4088
+
+; TP
+HKR,NDI\params\TP,ParamDesc,,"TP"
+HKR,NDI\params\TP,default,,0
+HKR,NDI\params\TP,type,,enum
+HKR,NDI\params\TP\enum,0,,Default (OFF)
+HKR,NDI\params\TP\enum,1,,ON
+
+;****************************************************************************
+; PCnet Drivers
+;****************************************************************************
+[PCnet.ndi.reg]
+; key,subkey,valuname,type,value
+HKR,,DevLoader,,*ndis
+HKR,,DeviceVxDs,,pcntn3.vxd
+HKR,,EnumPropPages,,"netdi.dll,EnumPropPages"
+; NDIS Info
+HKR,NDIS,LogDriverName,,"PCNTN3"
+HKR,NDIS,MajorNdisVersion,1,03
+HKR,NDIS,MinorNdisVersion,1,0A
+HKR,NDIS\NDIS2,DriverName,,"PCNTND$"
+HKR,NDIS\NDIS2,FileName,,"pcntnd.dos"
+HKR,NDIS\ODI,DriverName,,"PCNTNW,BOCANW,AM2100"
+HKR,NDIS\ODI,FileName,,"pcntnw.com"
+; Interfaces
+HKR,Ndi\Interfaces,DefUpper,,"ndis2,ndis3"
+HKR,Ndi\Interfaces,DefLower,,"ethernet"
+HKR,Ndi\Interfaces,UpperRange,,"ndis2,ndis3,odi"
+HKR,Ndi\Interfaces,LowerRange,,"ethernet"
+; Install sections
+HKR,Ndi\Install,ndis3,,"PCnet.ndis3"
+HKR,Ndi\Install,ndis2,,"PCnet.ndis2"
+;HKR,Ndi\Install,odi,,"PCnet.odi"
+
+; Install NDIS3
+[PCnet.ndis3]
+CopyFiles=PCnet.ndis3.CopyFiles, PCnet.inf.CopyFiles
+[PCnet.ndis3.CopyFiles]
+pcntn3.vxd
+
+; Install NDIS2
+[PCnet.ndis2]
+CopyFiles=PCnet.ndis2.CopyFiles, PCnet.inf.CopyFiles
+AddReg=PCnet.ndis2.reg
+[PCnet.ndis2.reg]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Network\Real Mode Net",pcntnd.dos,,low
+[PCnet.ndis2.CopyFiles]
+pcntnd.dos
+
+; Install ODI
+[PCnet.odi]
+CopyFiles=PCnet.odi.CopyFiles, PCnet.inf.CopyFiles
+[PCnet.odi.CopyFiles]
+pcntnw.com
+
+;Install the Inf file.
+;
+[PCnet.inf.CopyFiles]
+Netamd.inf
+
+;****************************************************************************
+; AM2100 Drivers
+;****************************************************************************
+[AM2100.ndi.reg]
+; key,subkey,valuname,type,value
+HKR,,DevLoader,,*ndis
+HKR,,DeviceVxDs,,am1500t.VXD
+HKR,,EnumPropPages,,"netdi.dll,EnumPropPages"
+; NDIS Info
+HKR,NDIS,LogDriverName,,"AM1500T"
+HKR,NDIS,MajorNdisVersion,1,03
+HKR,NDIS,MinorNdisVersion,1,0A
+HKR,NDIS\NDIS2,DriverName,,"AM2100$"
+HKR,NDIS\NDIS2,FileName,,"am2100.dos"
+HKR,NDIS\ODI,DriverName,,"NE2100"
+HKR,NDIS\ODI,FileName,,"ne2100.com"
+; Interfaces
+HKR,Ndi\Interfaces,DefUpper,,"ndis2,ndis3"
+HKR,Ndi\Interfaces,DefLower,,"ethernet"
+HKR,Ndi\Interfaces,UpperRange,,"ndis2,ndis3,odi"
+HKR,Ndi\Interfaces,LowerRange,,"ethernet"
+; Install sections
+HKR,Ndi\Install,ndis3,,"AM1500t.ndis3"
+HKR,Ndi\Install,ndis2,,"AM2100.ndis2"
+;HKR,Ndi\Install,odi,,"AM2100.odi"
+
+;****************************************************************************
+; AM1500 Drivers
+;****************************************************************************
+[AM1500.ndi.reg]
+; key,subkey,valuname,type,value
+HKR,,DevLoader,,*ndis
+HKR,,DeviceVxDs,,am1500t.VXD
+HKR,,EnumPropPages,,"netdi.dll,EnumPropPages"
+; NDIS Info
+HKR,NDIS,LogDriverName,,"AM1500T"
+HKR,NDIS,MajorNdisVersion,1,03
+HKR,NDIS,MinorNdisVersion,1,0A
+HKR,NDIS\NDIS2,DriverName,,"AM2100$"
+HKR,NDIS\NDIS2,FileName,,"AM2100.dos"
+HKR,NDIS\ODI,DriverName,,"NE1500T"
+HKR,NDIS\ODI,FileName,,"ne1500t.com"
+; Interfaces
+HKR,Ndi\Interfaces,DefUpper,,"ndis2,ndis3"
+HKR,Ndi\Interfaces,DefLower,,"ethernet"
+HKR,Ndi\Interfaces,UpperRange,,"ndis2,ndis3,odi"
+HKR,Ndi\Interfaces,LowerRange,,"ethernet"
+; Install sections
+HKR,Ndi\Install,ndis3,,"AM1500t.ndis3"
+HKR,Ndi\Install,ndis2,,"AM2100.ndis2"
+;HKR,Ndi\Install,odi,,"AM1500.odi"
+
+; Copy file sections
+; Install NDIS3
+[AM1500t.ndis3]
+CopyFiles=AM1500t.ndis3.CopyFiles
+[AM1500t.ndis3.CopyFiles]
+am1500t.vxd
+
+; Install NDIS2
+[AM2100.ndis2]
+CopyFiles=AM2100.ndis2.CopyFiles
+AddReg=AM2100.ndis2.reg
+[AM2100.ndis2.CopyFiles]
+am2100.dos
+[AM2100.ndis2.reg]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Network\Real Mode Net",am2100.dos,,low
+
+; Install ODI
+[AM2100.odi]
+CopyFiles=AM2100.odi.CopyFiles
+[AM2100.odi.CopyFiles]
+ne2100.com
+
+; Install ODI
+[AM1500.odi]
+CopyFiles=AM1500.odi.CopyFiles
+[AM1500.odi.CopyFiles]
+ne1500t.com
+
+;****************************************************************************
+; Destination Directories
+;****************************************************************************
+[DestinationDirs]
+DefaultDestDir              =11 ; LDID_SYS
+AM2100.ndis3.CopyFiles       =11
+AM2100.ndis2.CopyFiles       =26 ; LDID_WINBOOT
+AM2100.odi.CopyFiles         =26
+PCnet.ndis3.CopyFiles        =11 ; LDID_WINBOOT
+PCnet.ndis2.CopyFiles        =26
+PCnet.odi.CopyFiles          =26
+PCnet.inf.CopyFiles          =17 ; LDID_INF
+AM1500.ndis2.CopyFiles       =26 ; LDID_WINBOOT
+AM1500.odi.CopyFiles         =26
+
+;****************************************************************************
+; Localizable Strings
+;****************************************************************************
+[strings]
+; Provider
+V_MS="AMD"
+; Manufacturers
+V_AMD="Advanced Micro Devices (AMD)"
+V_BOCA="Boca Research"
+V_EXOS="EXOS"
+V_NOVELL="Novell/Anthem"
+V_TULIP="Tulip"
+V_MICRO="Microdyne"
+V_SVEC="SVEC"
+V_MITRON="Mitron"
+V_ALLIED="Allied Telesyn"
+V_SYS="SysKonnect"
+V_CPQ="Compaq"
+
+; PNP Devices
+*pnp8231.DeviceDesc="AMD AM2100/AM1500t and compatibles"
+*ADV55AA.DeviceDesc="AMD PCNET Family Ethernet Adapter/ISA+"
+*BRI1001.DeviceDesc="Boca Research BOCALANcard"
+*TCI00D0.DeviceDesc="Tulip NCC-16 ISA+"
+*pnp828d.DeviceDesc="AMD PCNET Family Ethernet VL-Bus Adapter"
+*pnp8277.DeviceDesc="Exos 105"
+*pnp80d7.DeviceDesc="Novell/Anthem NE1500T"
+*pnp80d8.DeviceDesc="Novell/Anthem NE2100"
+
+*SVE0001.DeviceDesc="SVEC FD0421 EtherPlug-ISA"
+*ATK1500.DeviceDesc="Allied Telesyn AT1510 Ethernet Adapter"
+*MITRON.DeviceDesc= "Mitron LX-2100+ Ethernet Adapter"
+*MICRO.DeviceDesc=  "Microdyne NE2500 Ethernet Adapter"
+*MICRO2.DeviceDesc= "Microdyne NE2500T Ethernet Adapter"
+*SKD8000.DeviceDesc="SysKonnect SK-NET Flash Ethernet Adapter"
+
+*pnp828c.DeviceDesc=  "AMD PCNET Family Ethernet Adapter (PCI&ISA)"
+*MITRONPCI.DeviceDesc="Mitron PCI Local Bus Ethernet"
+*MICROPCI.DeviceDesc= "Microdyne PCI Ethernet Adapter"
+*SVEPCI.DeviceDesc=   "SVEC FD0455 EtherBoard-PCI"
+*COMPAQPCI.DeviceDesc="Compaq Integrated NetFlex ENET/PCI"
+*COMPAQPC2.DeviceDesc="Compaq Integrated NetFlex-L ENET"
+Disk1="AMD PCnet Driver Disk"
+
+

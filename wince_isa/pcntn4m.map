@@ -1,0 +1,297 @@
+ pcntn4m
+
+ Timestamp is 39f60d34 (Tue Oct 24 15:29:08 2000)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000737H .rdata                  CODE
+ 0001:00000738 00003f66H .text                   CODE
+ 0001:000046a0 0000003cH .idata$2                CODE
+ 0001:000046dc 00000014H .idata$3                CODE
+ 0001:000046f0 000000e4H .idata$4                CODE
+ 0001:000047d4 0000040eH .idata$6                CODE
+ 0001:00004bf0 00000063H .edata                  CODE
+ 0002:00000000 000000e4H .idata$5                DATA
+ 0002:000000e8 00000248H .data                   DATA
+ 0002:00000330 00000024H .bss                    DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:0000001c       ??_C@_07CLBM@PCNTN4M?$AA@  1000101c     request.obj
+ 0001:00000024       ??_C@_0CP@GLKB@Copyright?$CIc?$CJ?51996?5ADVANCED?5MICRO@ 10001024     lance.obj
+ 0001:00000054       ??_C@_0CJ@MIIJ@24?3?5ISA?5scan?5specified?0?5device?5n@ 10001054     lance.obj
+ 0001:00000080       ??_C@_0CK@EJMO@23?3?5VESA?5scan?5specified?0?5device?5@ 10001080     lance.obj
+ 0001:000000ac       ??_C@_0CJ@NIPK@22?3?5PnP?5scan?5specified?0?5device?5n@ 100010ac     lance.obj
+ 0001:000000d8       ??_C@_0BC@JGIL@?5Device?5not?5found?$AA@ 100010d8     lance.obj
+ 0001:000000ec       ??_C@_0CO@JGFF@Device?5at?5specified?5IO?5base?5addr@ 100010ec     lance.obj
+ 0001:0000011c       ??_C@_0BI@KGOA@LanceOpenAdapter?5failed?$AA@ 1000111c     lance.obj
+ 0001:00000134       ??_C@_0CF@CKKF@PCI?5scan?5specified?0?5device?5not?5f@ 10001134     lance.obj
+ 0001:0000015c       ??_C@_0CG@INGD@PCI?5scan?5specified?0?5PCI?5bus?5not?5@ 1000115c     lance.obj
+ 0001:00000184       ??_C@_0O@OL@DMA?5channel?5?$DN?$AA@ 10001184     lance.obj
+ 0001:00000194       ??_C@_0BD@MLEM@Interrupt?5number?5?$DN?$AA@ 10001194     lance.obj
+ 0001:000001a8       ??_C@_0BD@FIDK@IO?5base?5address?5?$DN?5?$AA@ 100011a8     lance.obj
+ 0001:000001bc       ??_C@_0DK@LPDP@IRQ?5and?1or?5DMA?5number?5is?5already@ 100011bc     lance.obj
+ 0001:000001f8       ??_C@_0CM@CAHM@DMA?5number?5found?5doesn?8t?5match?5P@ 100011f8     lance.obj
+ 0001:00000224       ??_C@_0CM@OOA@IRQ?5number?5found?5doesn?8t?5match?5P@ 10001224     lance.obj
+ 0001:00000250       ??_C@_0DA@ICFF@You?5can?8t?5specify?5IOBase?5address@ 10001250     lance.obj
+ 0001:00000280       ??_C@_0DE@COIH@IO?5base?5address?5is?5already?5in?5us@ 10001280     lance.obj
+ 0001:000002b4       ??_C@_0P@NOGA@New?5Address?5?$DN?5?$AA@ 100012b4     lance.obj
+ 0001:000002c4       ??_C@_05HCEC@tp?5?$DN?5?$AA@ 100012c4     lance.obj
+ 0001:000002cc       ??_C@_07ONGO@led3?5?$DN?5?$AA@ 100012cc     lance.obj
+ 0001:000002d4       ??_C@_07MIDM@led2?5?$DN?5?$AA@ 100012d4     lance.obj
+ 0001:000002dc       ??_C@_07KHMK@led1?5?$DN?5?$AA@ 100012dc     lance.obj
+ 0001:000002e4       ??_C@_07ICJI@led0?5?$DN?5?$AA@ 100012e4     lance.obj
+ 0001:000002ec       ??_C@_0L@CCIE@BusScan?5?$DN?5?$AA@ 100012ec     lance.obj
+ 0001:000002f8       ??_C@_0BL@MECB@NdisRegisterMac?5successful?$AA@ 100012f8     lance.obj
+ 0001:00000338       ??_C@_1O@HHHP@?$AAP?$AAC?$AAN?$AAT?$AAN?$AA3?$AA?$AA@ 10001338     lance.obj
+ 0001:00000348       ??_C@_1CC@KJIM@?$AA?2?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA3?$AA0?$AA1?$AA?$AA@ 10001348     lance.obj
+ 0001:0000036c       ??_C@_1BE@GIME@?$AAB?$AAu?$AAs?$AAN?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?$AA@ 1000136c     lance.obj
+ 0001:00000380       ??_C@_1BG@LMJN@?$AAS?$AAl?$AAo?$AAt?$AAN?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?$AA@ 10001380     lance.obj
+ 0001:00000398       ??_C@_1BC@JLCP@?$AAB?$AAU?$AAS?$AAT?$AAI?$AAM?$AAE?$AAR?$AA?$AA@ 10001398     lance.obj
+ 0001:000003ac       ??_C@_19KEIE@?$AAL?$AAE?$AAD?$AA3?$AA?$AA@ 100013ac     lance.obj
+ 0001:000003b8       ??_C@_19PGJC@?$AAL?$AAE?$AAD?$AA2?$AA?$AA@ 100013b8     lance.obj
+ 0001:000003c4       ??_C@_19KJ@?$AAL?$AAE?$AAD?$AA1?$AA?$AA@ 100013c4     lance.obj
+ 0001:000003d0       ??_C@_19FCLP@?$AAL?$AAE?$AAD?$AA0?$AA?$AA@ 100013d0     lance.obj
+ 0001:000003dc       ??_C@_1O@IKOL@?$AAM?$AAP?$AAM?$AAO?$AAD?$AAE?$AA?$AA@ 100013dc     lance.obj
+ 0001:000003ec       ??_C@_15CPFE@?$AAT?$AAP?$AA?$AA@ 100013ec     lance.obj
+ 0001:000003f4       ??_C@_1O@INFE@?$AAE?$AAX?$AAT?$AAP?$AAH?$AAY?$AA?$AA@ 100013f4     lance.obj
+ 0001:00000404       ??_C@_19IPPE@?$AAF?$AAD?$AAU?$AAP?$AA?$AA@ 10001404     lance.obj
+ 0001:00000410       ??_C@_1BA@JFHM@?$AAB?$AAu?$AAs?$AAT?$AAy?$AAp?$AAe?$AA?$AA@ 10001410     lance.obj
+ 0001:00000420       ??_C@_0BP@NDOO@Failed?5registering?5interrupt?$CB?6?$AA@ 10001420     lance.obj
+ 0001:00000440       ??_C@_1DE@KOJO@?$AAC?$AAo?$AAm?$AAm?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA1?$AA?2?$AAP?$AAa?$AAr?$AAm?$AAs?$AA?2@ 10001440     wince.obj
+ 0001:00000474       ??_C@_1CK@IOKL@?$AAC?$AAo?$AAm?$AAm?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA?2?$AAL?$AAi?$AAn?$AAk?$AAa?$AAg?$AAe@ 10001474     wince.obj
+ 0001:000004a0       ??_C@_1CI@IAKJ@?$AAC?$AAo?$AAm?$AAm?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA1?$AA?2?$AAP?$AAa?$AAr?$AAm?$AAs?$AA?$AA@ 100014a0     wince.obj
+ 0001:000004c8       ??_C@_1BM@MNHD@?$AAC?$AAo?$AAm?$AAm?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA1?$AA?$AA@ 100014c8     wince.obj
+ 0001:000004e4       ??_C@_1BK@BMGL@?$AAC?$AAo?$AAm?$AAm?$AA?2?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA?$AA@ 100014e4     wince.obj
+ 0001:00000500       ??_C@_1BM@OOON@?$AA2?$AA5?$AA5?$AA?4?$AA2?$AA5?$AA5?$AA?4?$AA2?$AA5?$AA5?$AA?4?$AA0?$AA?$AA@ 10001500     wince.obj
+ 0001:0000051c       ??_C@_1BG@IBIB@?$AAS?$AAu?$AAb?$AAn?$AAe?$AAt?$AAm?$AAa?$AAs?$AAk?$AA?$AA@ 1000151c     wince.obj
+ 0001:00000534       ??_C@_1BK@MDGM@?$AA1?$AA3?$AA9?$AA?4?$AA9?$AA5?$AA?4?$AA2?$AA6?$AA?4?$AA7?$AA0?$AA?$AA@ 10001534     wince.obj
+ 0001:00000550       ??_C@_1BE@CDIJ@?$AAI?$AAp?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$AA@ 10001550     wince.obj
+ 0001:00000564       ??_C@_1CC@GGLI@?$AAU?$AAs?$AAe?$AAZ?$AAe?$AAr?$AAo?$AAB?$AAr?$AAo?$AAa?$AAd?$AAc?$AAa?$AAs?$AAt?$AA?$AA@ 10001564     wince.obj
+ 0001:00000588       ??_C@_1BI@CEIJ@?$AAL?$AAL?$AAI?$AAn?$AAt?$AAe?$AAr?$AAf?$AAa?$AAc?$AAe?$AA?$AA@ 10001588     wince.obj
+ 0001:000005a0       ??_C@_11A@?$AA?$AA@        100015a0     wince.obj
+ 0001:000005a4       ??_C@_1BO@GNKI@?$AAD?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AAG?$AAa?$AAt?$AAe?$AAw?$AAa?$AAy?$AA?$AA@ 100015a4     wince.obj
+ 0001:000005c4       ??_C@_1BC@KGPH@?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA1?$AA?$AA@ 100015c4     wince.obj
+ 0001:000005d8       ??_C@_1M@OM@?$AAR?$AAo?$AAu?$AAt?$AAe?$AA?$AA@ 100015d8     wince.obj
+ 0001:000005e4       ??_C@_1BE@IIEG@?$AAI?$AAO?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$AA@ 100015e4     wince.obj
+ 0001:000005f8       ??_C@_1BE@HPJE@?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AA?$AA@ 100015f8     wince.obj
+ 0001:0000060c       ??_C@_1BI@PDOB@?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@ 1000160c     wince.obj
+ 0001:00000624       ??_C@_1BE@PJND@?$AAI?$AAm?$AAa?$AAg?$AAe?$AAP?$AAa?$AAt?$AAh?$AA?$AA@ 10001624     wince.obj
+ 0001:00000638       ??_C@_19OIGE@?$AAN?$AAD?$AAI?$AAS?$AA?$AA@ 10001638     wince.obj
+ 0001:00000644       ??_C@_1M@EONE@?$AAG?$AAr?$AAo?$AAu?$AAp?$AA?$AA@ 10001644     wince.obj
+ 0001:00000650       ??_C@_1EG@INIH@?$AAP?$AAC?$AAN?$AAT?$AAN?$AA4?$AAM?$AA?5?$AAC?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?5?$AAE@ 10001650     wince.obj
+ 0001:00000698       ??_C@_1BI@JMDC@?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AAN?$AAa?$AAm?$AAe?$AA?$AA@ 10001698     wince.obj
+ 0001:000006b0       ??_C@_0CF@FMAH@Wince?4c?5PCNTN4M?3?5DLL_PROCESS_DET@ 100016b0     wince.obj
+ 0001:000006d8       ??_C@_0CF@HGG@Wince?4c?5PCNTN4M?3?5DLL_PROCESS_ATT@ 100016d8     wince.obj
+ 0001:00000700       ??_C@_0DH@FAIJ@?5FAILED?5To?5add?5keys?5to?5the?5regis@ 10001700     wince.obj
+ 0001:00000738       _LanceAllocateAdapterMemory 10001738 f   alloc.obj
+ 0001:0000088e       _LanceDeleteAdapterMemory  1000188e f   alloc.obj
+ 0001:000008a4       _LanceEnableInterrupt      100018a4 f   interrup.obj
+ 0001:000008d2       _LanceDisableInterrupt     100018d2 f   interrup.obj
+ 0001:00000900       _LanceISR                  10001900 f   interrup.obj
+ 0001:000009a1       _LanceHandleInterrupt      100019a1 f   interrup.obj
+ 0001:00000ed0       _LanceQueryInformation     10001ed0 f   request.obj
+ 0001:000011bb       _LanceSetInformation       100021bb f   request.obj
+ 0001:00001af8       _LanceSend                 10002af8 f   send.obj
+ 0001:00001ecf       _DriverEntry               10002ecf f   lance.obj
+ 0001:00002c3e       _LanceInitSystemDMA        10003c3e f   lance.obj
+ 0001:00002c84       _LanceInit                 10003c84 f   lance.obj
+ 0001:00003aba       _LanceMovePacket           10004aba f   lance.obj
+ 0001:00003bb0       _LanceGetActiveMediaInfo   10004bb0 f   lance.obj
+ 0001:00003d17       _LanceReadLink             10004d17 f   lance.obj
+ 0001:00003e6c       _LanceCableTimerFunction   10004e6c f   lance.obj
+ 0001:00004352       _DllEntry                  10005352 f   wince.obj
+ 0001:000043b6       _AddKeyValues              100053b6 f   wince.obj
+ 0001:000044ac       _Install_Driver            100054ac f   wince.obj
+ 0001:00004516       _VirtualCopy               10005516 f   coredll:COREDLL.dll
+ 0001:0000451c       _VirtualAlloc              1000551c f   coredll:COREDLL.dll
+ 0001:00004522       _LocalFree                 10005522 f   coredll:COREDLL.dll
+ 0001:00004528       _wcscpy                    10005528 f   coredll:COREDLL.dll
+ 0001:0000452e       _LocalAlloc                1000552e f   coredll:COREDLL.dll
+ 0001:00004534       _wcslen                    10005534 f   coredll:COREDLL.dll
+ 0001:0000453a       _DbgPrint                  1000553a f   ntcompat:debug.obj
+ 0001:00004596       _NdisMAllocateMapRegisters 10005596 f   ndis:NDIS.dll
+ 0001:0000459c       _NdisQueryMapRegisterCount 1000559c f   ndis:NDIS.dll
+ 0001:000045a2       _NdisMFreeMapRegisters     100055a2 f   ndis:NDIS.dll
+ 0001:000045a8       _NdisMIndicateStatus       100055a8 f   ndis:NDIS.dll
+ 0001:000045ae       _NdisFlushBuffer           100055ae f   ndis:NDIS.dll
+ 0001:000045b4       _NdisAdjustBufferLength    100055b4 f   ndis:NDIS.dll
+ 0001:000045ba       _NdisTerminateWrapper      100055ba f   ndis:NDIS.dll
+ 0001:000045c0       _NdisMRegisterMiniport     100055c0 f   ndis:NDIS.dll
+ 0001:000045c6       _NdisInitializeWrapper     100055c6 f   ndis:NDIS.dll
+ 0001:000045cc       _NdisMSetPeriodicTimer     100055cc f   ndis:NDIS.dll
+ 0001:000045d2       _NdisMInitializeTimer      100055d2 f   ndis:NDIS.dll
+ 0001:000045d8       _NdisMRegisterAdapterShutdownHandler 100055d8 f   ndis:NDIS.dll
+ 0001:000045de       _NdisFreeMemory            100055de f   ndis:NDIS.dll
+ 0001:000045e4       _NdisCloseConfiguration    100055e4 f   ndis:NDIS.dll
+ 0001:000045ea       _NdisReadNetworkAddress    100055ea f   ndis:NDIS.dll
+ 0001:000045f0       _NdisReadConfiguration     100055f0 f   ndis:NDIS.dll
+ 0001:000045f6       _NdisOpenConfiguration     100055f6 f   ndis:NDIS.dll
+ 0001:000045fc       _NdisAllocateMemory        100055fc f   ndis:NDIS.dll
+ 0001:00004602       _NdisMDeregisterIoPortRange 10005602 f   ndis:NDIS.dll
+ 0001:00004608       _NdisMRegisterInterrupt    10005608 f   ndis:NDIS.dll
+ 0001:0000460e       _NdisWriteErrorLogEntry    1000560e f   ndis:NDIS.dll
+ 0001:00004614       _NdisStallExecution        10005614 f   ndis:NDIS.dll
+ 0001:0000461a       _NdisMRegisterIoPortRange  1000561a f   ndis:NDIS.dll
+ 0001:00004620       _NdisMSetAttributes        10005620 f   ndis:NDIS.dll
+ 0001:00004626       _NdisWritePciSlotInformation 10005626 f   ndis:NDIS.dll
+ 0001:0000462c       _NdisReadPciSlotInformation 1000562c f   ndis:NDIS.dll
+ 0001:00004632       _NdisMDeregisterInterrupt  10005632 f   ndis:NDIS.dll
+ 0001:00004638       _NdisMCancelTimer          10005638 f   ndis:NDIS.dll
+ 0001:0000463e       _NdisQueryBuffer           1000563e f   ndis:NDIS.dll
+ 0001:00004644       _NdisFreeBufferPool        10005644 f   ndis:NDIS.dll
+ 0001:0000464a       _NdisAllocateBuffer        1000564a f   ndis:NDIS.dll
+ 0001:00004650       _NdisAllocatePacket        10005650 f   ndis:NDIS.dll
+ 0001:00004656       _NdisFreePacketPool        10005656 f   ndis:NDIS.dll
+ 0001:0000465c       _NdisAllocateBufferPool    1000565c f   ndis:NDIS.dll
+ 0001:00004662       _NdisAllocatePacketPool    10005662 f   ndis:NDIS.dll
+ 0001:00004668       _NdisFreePacket            10005668 f   ndis:NDIS.dll
+ 0001:0000466e       _NdisFreeBuffer            1000566e f   ndis:NDIS.dll
+ 0001:00004674       _NdisUnchainBufferAtFront  10005674 f   ndis:NDIS.dll
+ 0001:0000467a       _WRITE_PORT_USHORT         1000567a f   ceddk:CEDDK.dll
+ 0001:00004680       _READ_PORT_USHORT          10005680 f   ceddk:CEDDK.dll
+ 0001:00004686       _READ_PORT_UCHAR           10005686 f   ceddk:CEDDK.dll
+ 0001:0000468c       _WRITE_PORT_UCHAR          1000568c f   ceddk:CEDDK.dll
+ 0001:00004692       _OutputDebugStringW        10005692 f   coredll:COREDLL.dll
+ 0001:00004698       _vsprintf                  10005698 f   coredll:COREDLL.dll
+ 0001:000046a0       __IMPORT_DESCRIPTOR_COREDLL 100056a0     coredll:COREDLL.dll
+ 0001:000046b4       __IMPORT_DESCRIPTOR_NDIS   100056b4     ndis:NDIS.dll
+ 0001:000046c8       __IMPORT_DESCRIPTOR_CEDDK  100056c8     ceddk:CEDDK.dll
+ 0001:000046dc       __NULL_IMPORT_DESCRIPTOR   100056dc     coredll:COREDLL.dll
+ 0002:00000000       __imp__READ_PORT_USHORT    10006000     ceddk:CEDDK.dll
+ 0002:00000004       __imp__READ_PORT_UCHAR     10006004     ceddk:CEDDK.dll
+ 0002:00000008       __imp__WRITE_PORT_USHORT   10006008     ceddk:CEDDK.dll
+ 0002:0000000c       __imp__WRITE_PORT_UCHAR    1000600c     ceddk:CEDDK.dll
+ 0002:00000010       \177CEDDK_NULL_THUNK_DATA  10006010     ceddk:CEDDK.dll
+ 0002:00000014       __imp__LocalAlloc          10006014     coredll:COREDLL.dll
+ 0002:00000018       __imp__wcscpy              10006018     coredll:COREDLL.dll
+ 0002:0000001c       __imp__RegSetValueExW      1000601c     coredll:COREDLL.dll
+ 0002:00000020       __imp__VirtualAlloc        10006020     coredll:COREDLL.dll
+ 0002:00000024       __imp__RegDeleteKeyW       10006024     coredll:COREDLL.dll
+ 0002:00000028       __imp__LocalFree           10006028     coredll:COREDLL.dll
+ 0002:0000002c       __imp__RegCloseKey         1000602c     coredll:COREDLL.dll
+ 0002:00000030       __imp__wcslen              10006030     coredll:COREDLL.dll
+ 0002:00000034       __imp__RegCreateKeyExW     10006034     coredll:COREDLL.dll
+ 0002:00000038       __imp__vsprintf            10006038     coredll:COREDLL.dll
+ 0002:0000003c       __imp__OutputDebugStringW  1000603c     coredll:COREDLL.dll
+ 0002:00000040       __imp__VirtualCopy         10006040     coredll:COREDLL.dll
+ 0002:00000044       \177COREDLL_NULL_THUNK_DATA 10006044     coredll:COREDLL.dll
+ 0002:00000048       __imp__NdisInitializeWrapper 10006048     ndis:NDIS.dll
+ 0002:0000004c       __imp__NdisMSetPeriodicTimer 1000604c     ndis:NDIS.dll
+ 0002:00000050       __imp__NdisMRegisterMiniport 10006050     ndis:NDIS.dll
+ 0002:00000054       __imp__NdisTerminateWrapper 10006054     ndis:NDIS.dll
+ 0002:00000058       __imp__NdisMInitializeTimer 10006058     ndis:NDIS.dll
+ 0002:0000005c       __imp__NdisFreeMemory      1000605c     ndis:NDIS.dll
+ 0002:00000060       __imp__NdisCloseConfiguration 10006060     ndis:NDIS.dll
+ 0002:00000064       __imp__NdisReadNetworkAddress 10006064     ndis:NDIS.dll
+ 0002:00000068       __imp__NdisReadConfiguration 10006068     ndis:NDIS.dll
+ 0002:0000006c       __imp__NdisMRegisterAdapterShutdownHandler 1000606c     ndis:NDIS.dll
+ 0002:00000070       __imp__NdisWritePciSlotInformation 10006070     ndis:NDIS.dll
+ 0002:00000074       __imp__NdisMDeregisterIoPortRange 10006074     ndis:NDIS.dll
+ 0002:00000078       __imp__NdisMRegisterInterrupt 10006078     ndis:NDIS.dll
+ 0002:0000007c       __imp__NdisWriteErrorLogEntry 1000607c     ndis:NDIS.dll
+ 0002:00000080       __imp__NdisStallExecution  10006080     ndis:NDIS.dll
+ 0002:00000084       __imp__NdisMRegisterIoPortRange 10006084     ndis:NDIS.dll
+ 0002:00000088       __imp__NdisMSetAttributes  10006088     ndis:NDIS.dll
+ 0002:0000008c       __imp__NdisAdjustBufferLength 1000608c     ndis:NDIS.dll
+ 0002:00000090       __imp__NdisReadPciSlotInformation 10006090     ndis:NDIS.dll
+ 0002:00000094       __imp__NdisMDeregisterInterrupt 10006094     ndis:NDIS.dll
+ 0002:00000098       __imp__NdisMCancelTimer    10006098     ndis:NDIS.dll
+ 0002:0000009c       __imp__NdisQueryBuffer     1000609c     ndis:NDIS.dll
+ 0002:000000a0       __imp__NdisFreeBufferPool  100060a0     ndis:NDIS.dll
+ 0002:000000a4       __imp__NdisAllocateBuffer  100060a4     ndis:NDIS.dll
+ 0002:000000a8       __imp__NdisAllocatePacket  100060a8     ndis:NDIS.dll
+ 0002:000000ac       __imp__NdisFreePacketPool  100060ac     ndis:NDIS.dll
+ 0002:000000b0       __imp__NdisAllocateBufferPool 100060b0     ndis:NDIS.dll
+ 0002:000000b4       __imp__NdisAllocatePacketPool 100060b4     ndis:NDIS.dll
+ 0002:000000b8       __imp__NdisFreePacket      100060b8     ndis:NDIS.dll
+ 0002:000000bc       __imp__NdisFreeBuffer      100060bc     ndis:NDIS.dll
+ 0002:000000c0       __imp__NdisUnchainBufferAtFront 100060c0     ndis:NDIS.dll
+ 0002:000000c4       __imp__NdisFlushBuffer     100060c4     ndis:NDIS.dll
+ 0002:000000c8       __imp__NdisMIndicateStatus 100060c8     ndis:NDIS.dll
+ 0002:000000cc       __imp__NdisMFreeMapRegisters 100060cc     ndis:NDIS.dll
+ 0002:000000d0       __imp__NdisQueryMapRegisterCount 100060d0     ndis:NDIS.dll
+ 0002:000000d4       __imp__NdisMAllocateMapRegisters 100060d4     ndis:NDIS.dll
+ 0002:000000d8       __imp__NdisOpenConfiguration 100060d8     ndis:NDIS.dll
+ 0002:000000dc       __imp__NdisAllocateMemory  100060dc     ndis:NDIS.dll
+ 0002:000000e0       \177NDIS_NULL_THUNK_DATA   100060e0     ndis:NDIS.dll
+ 0002:000000e8       _LanceCsrAccessMasks       100060e8     request.obj
+ 0002:000000f8       _LanceBcrAccessMasks       100060f8     request.obj
+ 0002:000001c0       _DefaultAdapterName        100061c0     lance.obj
+ 0002:000001d0       _msg1                      100061d0     lance.obj
+ 0002:000001d4       _msg2                      100061d4     lance.obj
+ 0002:000001d8       _msg3                      100061d8     lance.obj
+ 0002:000001dc       _msg4                      100061dc     lance.obj
+ 0002:000001e0       _msg5                      100061e0     lance.obj
+ 0002:000001e4       _msg6                      100061e4     lance.obj
+ 0002:000001e8       _msg7                      100061e8     lance.obj
+ 0002:000001ec       _msg8                      100061ec     lance.obj
+ 0002:000001f0       _msg9                      100061f0     lance.obj
+ 0002:000001f4       _msg10                     100061f4     lance.obj
+ 0002:000001f8       _msg11                     100061f8     lance.obj
+ 0002:000001fc       _msg12                     100061fc     lance.obj
+ 0002:00000200       _msg13                     10006200     lance.obj
+ 0002:00000204       _msg14                     10006204     lance.obj
+ 0002:00000208       _msg15                     10006208     lance.obj
+ 0002:0000020c       _msg16                     1000620c     lance.obj
+ 0002:00000210       _msg17                     10006210     lance.obj
+ 0002:00000214       _msg18                     10006214     lance.obj
+ 0002:00000218       _msg19                     10006218     lance.obj
+ 0002:0000021c       _msg20                     1000621c     lance.obj
+ 0002:00000220       _msg21                     10006220     lance.obj
+ 0002:00000224       _msg22                     10006224     lance.obj
+ 0002:00000228       _msg23                     10006228     lance.obj
+ 0002:0000022c       _msg24                     1000622c     lance.obj
+ 0002:00000230       _LED_defaults              10006230     lance.obj
+ 0002:00000240       _Copyright                 10006240     lance.obj
+ 0002:00000248       _CommKeyValues             10006248     wince.obj
+ 0002:00000278       _ParmKeyValues             10006278     wince.obj
+ 0002:000002a8       _LinkageKeyValues          100062a8     wince.obj
+ 0002:000002c0       _TcpIpKeyValues            100062c0     wince.obj
+ 0002:00000308       _Values                    10006308     wince.obj
+ 0002:0000031c       _KeyNames                  1000631c     wince.obj
+ 0002:00000330       _AdapterIo                 10006330     lance.obj
+ 0002:00000340       _AdapterIrq                10006340     lance.obj
+ 0002:00000344       _AdapterDma                10006344     lance.obj
+ 0002:0000034c       _g_pvDmaVirtualBase        1000634c     <common>
+ 0002:00000350       _LanceWrapperHandle        10006350     <common>
+
+ entry point at        0001:00004352
+
+ Static symbols
+
+ 0001:00001f8a       _LanceInitialize           10002f8a f   lance.obj
+ 0001:00002593       _LanceRegisterAdapter      10003593 f   lance.obj
+ 0001:0000285b       _SetNetworkID              1000385b f   lance.obj
+ 0001:000029b2       _LanceHardwareDetails      100039b2 f   lance.obj
+ 0001:000029fa       _LanceCheckIrqDmaValid     100039fa f   lance.obj
+ 0001:00002a99       _LanceCleanResources       10003a99 f   lance.obj
+ 0001:00002ad7       _LanceScanPnP              10003ad7 f   lance.obj
+ 0001:00002b97       _LanceCheckIoAddress       10003b97 f   lance.obj
+ 0001:00002bb4       _LanceROMCheck             10003bb4 f   lance.obj
+ 0001:00002cfd       _LanceStopChip             10003cfd f   lance.obj
+ 0001:00002e99       _LancePciEnableDma         10003e99 f   lance.obj
+ 0001:00002ea7       _LancePciDisableDma        10003ea7 f   lance.obj
+ 0001:00002eb5       _LanceSetPciDma            10003eb5 f   lance.obj
+ 0001:00002f40       _LanceSetupRegistersAndInit 10003f40 f   lance.obj
+ 0001:00003433       _InitFullDuplexMode        10004433 f   lance.obj
+ 0001:000035cf       _InitLEDs                  100045cf f   lance.obj
+ 0001:00003721       _LanceStartChip            10004721 f   lance.obj
+ 0001:00003865       _LanceReset                10004865 f   lance.obj
+ 0001:000038b0       _LanceHalt                 100048b0 f   lance.obj
+ 0001:00003a83       _LanceTransferData         10004a83 f   lance.obj
+ 0001:00003d53       _ExtPhyLinkStatus          10004d53 f   lance.obj
+ 0001:00003dce       _IntPhyLinkStatus          10004dce f   lance.obj
+ 0001:00003f22       _LanceSetExtPhyMedia       10004f22 f   lance.obj
+ 0001:00003fe3       _LanceInitRxPacketPool     10004fe3 f   lance.obj
+ 0001:0000413b       _LanceFreeRxPacketPool     1000513b f   lance.obj
+ 0001:0000416b       _LanceFreeNdisPkts         1000516b f   lance.obj
+ 0001:000041b3       _LanceShutdownHandler      100051b3 f   lance.obj
+ 0001:000012cb       _LanceChangeClass          100022cb f   request.obj
+ 0001:000013a0       _LanceChangeAddress        100023a0 f   request.obj
+ 0001:0000145b       _CalculateCRC              1000245b f   request.obj
+ 0001:000014a1       _DmiRequest                100024a1 f   request.obj
+ 0001:00001a00       _LancePortAccess           10002a00 f   request.obj
+ 0001:00000e06       _XmitComplete              10001e06 f   interrup.obj
+ 0001:00000e5a       _RcvComplete               10001e5a f   interrup.obj
